@@ -1,12 +1,12 @@
-package com.kijak.kijak.service.serviceINTER;
-
-import com.kijak.kijak.entity.Choice;
-import com.kijak.kijak.entity.Departement;
+package com.kijak.kijak.service.facade;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface DepartementSERVICE {
+import com.kijak.kijak.bean.Choice;
+import com.kijak.kijak.bean.Departement;
+
+public interface DepartementService {
     public Departement save(Departement departement);
     public Optional<Departement> findbyid(Long id);
     public List<Departement> findall();

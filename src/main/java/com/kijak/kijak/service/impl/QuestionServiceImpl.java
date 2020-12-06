@@ -1,8 +1,9 @@
-package com.kijak.kijak.service.serviceIMPL;
+package com.kijak.kijak.service.impl;
 
-import com.kijak.kijak.DAO.QuestionDAO;
-import com.kijak.kijak.entity.Question;
-import com.kijak.kijak.service.serviceINTER.QuestionSEVICE;
+import com.kijak.kijak.bean.Question;
+import com.kijak.kijak.dao.QuestionDao;
+import com.kijak.kijak.service.facade.QuestionService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class QuestionSERVICEimpl implements QuestionSEVICE {
+public class QuestionServiceImpl implements QuestionService {
     @Autowired
-    private QuestionDAO questionDAO;
+    private QuestionDao questionDAO;
     @Override
     public Question save(Question question) {
         return questionDAO.save(question);

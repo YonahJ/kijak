@@ -1,4 +1,4 @@
-package com.kijak.kijak.entity;
+package com.kijak.kijak.bean;
 
 import javax.persistence.*;
 import java.io.Serializable;

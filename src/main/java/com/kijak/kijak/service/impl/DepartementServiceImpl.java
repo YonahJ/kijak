@@ -1,8 +1,9 @@
-package com.kijak.kijak.service.serviceIMPL;
+package com.kijak.kijak.service.impl;
 
-import com.kijak.kijak.DAO.DepartementDAO;
-import com.kijak.kijak.entity.Departement;
-import com.kijak.kijak.service.serviceINTER.DepartementSERVICE;
+import com.kijak.kijak.bean.Departement;
+import com.kijak.kijak.dao.DepartementDao;
+import com.kijak.kijak.service.facade.DepartementService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DepartementSERVICEimpl implements DepartementSERVICE {
+public class DepartementServiceImpl implements DepartementService {
     @Autowired
-    private DepartementDAO departementDAO;
+    private DepartementDao departementDAO;
     @Override
     public Departement save(Departement departement) {
         return departementDAO.save(departement);

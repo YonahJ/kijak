@@ -1,9 +1,10 @@
-package com.kijak.kijak.service.serviceIMPL;
+package com.kijak.kijak.service.impl;
 
-import com.kijak.kijak.DAO.ChoiceDAO;
-import com.kijak.kijak.entity.Answer;
-import com.kijak.kijak.entity.Choice;
-import com.kijak.kijak.service.serviceINTER.ChoiceService;
+import com.kijak.kijak.bean.Answer;
+import com.kijak.kijak.bean.Choice;
+import com.kijak.kijak.dao.ChoiceDao;
+import com.kijak.kijak.service.facade.ChoiceService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ import java.util.Optional;
 @Service
 public class ChocieServiceImpl implements ChoiceService {
     @Autowired
-    public ChoiceDAO choiceDAO;
+    public ChoiceDao choiceDAO;
 
     @Override
     public Choice save(Choice choice) {

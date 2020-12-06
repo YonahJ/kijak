@@ -1,4 +1,4 @@
-package com.kijak.kijak.entity;
+package com.kijak.kijak.bean;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,6 +10,7 @@ public class Answer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String reference;
     private String myanswer;
     private String details;
     @ManyToOne
@@ -46,4 +47,20 @@ public class Answer implements Serializable {
     public void setQuestion(Question question) {
         this.question = question;
     }
+
+	public String getReference() {
+		return reference;
+	}
+
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+
+	@Override
+	public String toString() {
+		return "Answer [id=" + id + ", reference=" + reference + ", myanswer=" + myanswer + ", details=" + details
+				+ ", question=" + question + "]";
+	}
+    
+    
 }

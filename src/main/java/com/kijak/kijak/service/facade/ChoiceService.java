@@ -1,10 +1,10 @@
-package com.kijak.kijak.service.serviceINTER;
-
-import com.kijak.kijak.entity.Answer;
-import com.kijak.kijak.entity.Choice;
+package com.kijak.kijak.service.facade;
 
 import java.util.List;
 import java.util.Optional;
+
+import com.kijak.kijak.bean.Answer;
+import com.kijak.kijak.bean.Choice;
 
 public interface ChoiceService {
     public Choice save(Choice choice);

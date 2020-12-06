@@ -1,12 +1,12 @@
-package com.kijak.kijak.service.serviceINTER;
-
-import com.kijak.kijak.entity.Choice;
-import com.kijak.kijak.entity.User;
+package com.kijak.kijak.service.facade;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface UserSERVICE {
+import com.kijak.kijak.bean.Choice;
+import com.kijak.kijak.bean.User;
+
+public interface UserService {
     public User save(User user);
     public Optional<User> findbyid(Long id);
     public List<User> findall();
