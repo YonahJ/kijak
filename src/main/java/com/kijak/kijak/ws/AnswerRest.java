@@ -26,22 +26,22 @@ public class AnswerRest {
 		return answerService.save(answer);
 	}
 
-	@GetMapping
+	@GetMapping("/id/{id}")
 	public Optional<Answer> findById(@PathVariable Long id) {
 		return answerService.findById(id);
 	}
 	
-	@GetMapping
+	@GetMapping("/")
 	public List<Answer> findAll() {
 		return answerService.findAll();
 	}
 
-	@DeleteMapping
+	@DeleteMapping("/reference/{reference}")
 	public int deleteByReference(@PathVariable String reference) {
 		return answerService.deleteByReference(reference);
 	}
 	    
-	@GetMapping
+	@GetMapping("/reference/{reference}")
 	public Answer findByReference(@PathVariable String reference) {
 		return answerService.findByReference(reference);
 	}

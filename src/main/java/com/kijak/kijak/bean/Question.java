@@ -7,7 +7,11 @@ import java.util.List;
 
 @Entity
 public class Question implements Serializable {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String reference;
@@ -17,9 +21,9 @@ public class Question implements Serializable {
     private Date startDate;
     @Temporal(TemporalType.DATE)
     private Date finishDate;
-    @OneToMany(mappedBy = "question")
+    @OneToMany
     private List<Answer> answers;
-    @OneToOne(mappedBy = "question")
+    @OneToOne
     private Choice choice;
 
 

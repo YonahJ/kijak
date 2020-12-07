@@ -5,10 +5,14 @@ import java.io.Serializable;
 
 @Entity
 public class Choice implements Serializable {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne(mappedBy = "choice")
+    @OneToOne
     private Question question;
 
     public Long getId() {
