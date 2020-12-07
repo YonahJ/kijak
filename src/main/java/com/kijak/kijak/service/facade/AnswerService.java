@@ -7,8 +7,8 @@ import com.kijak.kijak.bean.Answer;
 
 public interface AnswerService {
     public int save(Answer answer);
-    public Optional<Answer> findbyid(Long id);
-    public List<Answer> findall();
+    public Optional<Answer> findById(Long id);
+    public List<Answer> findAll();
     public  int deleteByReference(String reference);
     public Answer findByReference(String reference);
 }

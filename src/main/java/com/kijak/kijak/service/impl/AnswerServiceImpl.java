@@ -27,20 +27,15 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public Optional<Answer> findbyid(Long id) {
+    public Optional<Answer> findById(Long id) {
         return answerDao.findById(id);
     }
 
     @Override
-    public List<Answer> findall() {
+    public List<Answer> findAll() {
         return answerDao.findAll();
     }
 
-    @Override
-    public int delete(Answer answer) {
-        answerDao.delete(answer);
-        return 1;
-    }
 
     @Override
 	public int deleteByReference(String reference) {
