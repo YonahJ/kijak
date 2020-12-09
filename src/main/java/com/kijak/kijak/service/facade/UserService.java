@@ -14,4 +14,5 @@ public interface UserService {
 	public User findByEmail(String email);
 	public int deleteByEmail(String email);
 	int seConnecter(User user);
+	public User update(String username, String email, String password);
 }

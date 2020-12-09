@@ -12,6 +12,7 @@ import com.kijak.kijak.dao.UserDao;
 import com.kijak.kijak.service.facade.UserService;
 import com.kijak.kijak.service.util.HashUtil;
 
+
 @Service
 public class UserServiceImpl implements UserService {
        @Autowired
@@ -19,6 +20,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public int save(User user) {
     	User foundUser = findByEmail(user.getEmail());
+    	user.setPassword(HashUtil.hash(user.getPassword()));
     	if(foundUser!=null) {
     		return -1;
     	} else {
@@ -79,4 +81,16 @@ public class UserServiceImpl implements UserService {
             return 1;
         }
     }
+	
+	@Override
+	public User update(String username, String email, String password) {
+		User foundedUser = findByUsername(username);
+		foundedUser.setUsername(username);
+		foundedUser.setPassword(password);
+		foundedUser.setPassword(HashUtil.hash(foundedUser.getPassword()));
+		foundedUser.setNbrTentatifRestant(5);
+		User updatedUser = userDAO.save(foundedUser);
+
+		return updatedUser;
+	}
 }

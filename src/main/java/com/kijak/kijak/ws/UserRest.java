@@ -22,8 +22,8 @@ public class UserRest {
 	@Autowired
 	UserService userService;
 	
-	@PostMapping
-	public int save(User user) {
+	@PostMapping("/")
+	public int save(@RequestBody User user) {
     	return userService.save(user);
     }
 
@@ -58,7 +58,7 @@ public class UserRest {
 		return  userService.deleteByEmail(email);
 	}
 	
-	@PutMapping
+	@PutMapping("/seconnecter")
 	public int seConnecter(@RequestBody User user) {
 		return userService.seConnecter(user);
 	}
